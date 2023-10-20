@@ -362,12 +362,12 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiTestTest extends Schema.CollectionType {
-  collectionName: 'tests';
+export interface ApiAromaAroma extends Schema.CollectionType {
+  collectionName: 'aromas';
   info: {
-    singularName: 'test';
-    pluralName: 'tests';
-    displayName: 'Test';
+    singularName: 'aroma';
+    pluralName: 'aromas';
+    displayName: 'Aromas';
   };
   options: {
     draftAndPublish: true;
@@ -387,19 +387,128 @@ export interface ApiTestTest extends Schema.CollectionType {
       }> &
       Attribute.SetMinMaxLength<{
         minLength: 3;
-        maxLength: 500;
+        maxLength: 50;
+      }>;
+    Description: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 3;
+        maxLength: 50;
+      }>;
+    Sweetness: Attribute.Enumeration<['Points: 1', 'Points: 2', 'Points: 3']> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Pungency: Attribute.Enumeration<['Points: 1', 'Points: 2', 'Points: 3']> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Freshness: Attribute.Enumeration<['Points: 1', 'Points: 2', 'Points: 3']> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+    createdBy: Attribute.Relation<
+      'api::aroma.aroma',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
-    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+    updatedBy: Attribute.Relation<
+      'api::aroma.aroma',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::test.test',
+      'api::aroma.aroma',
       'oneToMany',
-      'api::test.test'
+      'api::aroma.aroma'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiCandleCandle extends Schema.CollectionType {
+  collectionName: 'candles';
+  info: {
+    singularName: 'candle';
+    pluralName: 'candles';
+    displayName: 'Candles';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 3;
+        maxLength: 50;
+      }>;
+    Description: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 3;
+        maxLength: 500;
+      }>;
+    aromas: Attribute.Relation<
+      'api::candle.candle',
+      'oneToOne',
+      'api::aroma.aroma'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::candle.candle',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::candle.candle',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::candle.candle',
+      'oneToMany',
+      'api::candle.candle'
     >;
     locale: Attribute.String;
   };
@@ -730,7 +839,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::test.test': ApiTestTest;
+      'api::aroma.aroma': ApiAromaAroma;
+      'api::candle.candle': ApiCandleCandle;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
