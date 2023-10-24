@@ -485,11 +485,13 @@ export interface ApiCandleCandle extends Schema.CollectionType {
         minLength: 3;
         maxLength: 500;
       }>;
-    aromas: Attribute.Relation<
-      'api::candle.candle',
-      'oneToOne',
-      'api::aroma.aroma'
-    >;
+    hasAroma: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

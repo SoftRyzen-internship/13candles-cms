@@ -39,10 +39,14 @@
       "required": true,
       "minLength": 3
     },
-    "aromas": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::aroma.aroma"
+    "hasAroma": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "required": true
     }
   }
 }
