@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_image_images_s",
+  "info": {
+    "displayName": "Images ",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    }
+  }
+}
