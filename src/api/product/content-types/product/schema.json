@@ -103,6 +103,19 @@
       "required": true,
       "maxLength": 30,
       "minLength": 2
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "customField",
+      "options": {
+        "pattern": "id",
+        "kw": "prod"
+      },
+      "customField": "plugin::slug.slug"
     }
   }
 }

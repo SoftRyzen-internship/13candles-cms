@@ -1063,6 +1063,19 @@ export interface ApiProductProduct extends Schema.CollectionType {
         minLength: 2;
         maxLength: 30;
       }>;
+    slug: Attribute.String &
+      Attribute.CustomField<
+        'plugin::slug.slug',
+        {
+          pattern: 'id';
+          kw: 'prod';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
