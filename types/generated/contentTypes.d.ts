@@ -683,6 +683,7 @@ export interface ApiAromaAroma extends Schema.CollectionType {
     singularName: 'aroma';
     pluralName: 'aromas';
     displayName: 'Aromas';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -697,14 +698,14 @@ export interface ApiAromaAroma extends Schema.CollectionType {
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Attribute.SetMinMaxLength<{
         minLength: 3;
         maxLength: 50;
       }>;
-    Description: Attribute.String &
+    Notes: Attribute.String &
       Attribute.Required &
       Attribute.Unique &
       Attribute.SetPluginOptions<{
@@ -720,21 +721,23 @@ export interface ApiAromaAroma extends Schema.CollectionType {
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
-    Pungency: Attribute.Enumeration<['Points: 1', 'Points: 2', 'Points: 3']> &
+    Astringency: Attribute.Enumeration<
+      ['Points: 1', 'Points: 2', 'Points: 3']
+    > &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     Freshness: Attribute.Enumeration<['Points: 1', 'Points: 2', 'Points: 3']> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;

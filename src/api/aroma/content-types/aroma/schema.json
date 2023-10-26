@@ -4,7 +4,8 @@
   "info": {
     "singularName": "aroma",
     "pluralName": "aromas",
-    "displayName": "Aromas"
+    "displayName": "Aromas",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,7 +19,7 @@
     "Title": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string",
@@ -26,7 +27,7 @@
       "minLength": 3,
       "maxLength": 50
     },
-    "Description": {
+    "Notes": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -41,7 +42,7 @@
     "Sweetness": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "enumeration",
@@ -52,10 +53,10 @@
       ],
       "required": true
     },
-    "Pungency": {
+    "Astringency": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "enumeration",
@@ -69,7 +70,7 @@
     "Freshness": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "enumeration",
