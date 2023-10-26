@@ -79,6 +79,28 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "products"
+    },
+    "main_image": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "image.images",
+      "required": true
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "image.images",
+      "required": true
     }
   }
 }

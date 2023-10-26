@@ -1032,6 +1032,20 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToOne',
       'api::category.category'
     >;
+    main_image: Attribute.Component<'image.images'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    images: Attribute.Component<'image.images', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
