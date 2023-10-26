@@ -1005,12 +1005,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    capacity: Attribute.Integer &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     description: Attribute.RichText &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1057,6 +1051,17 @@ export interface ApiProductProduct extends Schema.CollectionType {
         i18n: {
           localized: true;
         };
+      }>;
+    capacity: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 2;
+        maxLength: 30;
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

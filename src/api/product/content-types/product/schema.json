@@ -35,15 +35,6 @@
       "type": "integer",
       "required": true
     },
-    "capacity": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "integer",
-      "required": false
-    },
     "description": {
       "pluginOptions": {
         "i18n": {
@@ -101,6 +92,17 @@
       },
       "component": "image.images",
       "required": true
+    },
+    "capacity": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "maxLength": 30,
+      "minLength": 2
     }
   }
 }
