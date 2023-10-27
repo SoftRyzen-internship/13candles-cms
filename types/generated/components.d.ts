@@ -9,7 +9,7 @@ export interface ImageImages extends Schema.Component {
   };
   attributes: {
     photo: Attribute.Media & Attribute.Required;
-    description: Attribute.String &
+    image_description: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 40;

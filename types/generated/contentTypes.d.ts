@@ -816,76 +816,6 @@ export interface ApiBannerBanner extends Schema.SingleType {
   };
 }
 
-export interface ApiCandleCandle extends Schema.CollectionType {
-  collectionName: 'candles';
-  info: {
-    singularName: 'candle';
-    pluralName: 'candles';
-    displayName: 'Candles';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.SetMinMaxLength<{
-        minLength: 3;
-        maxLength: 50;
-      }>;
-    Description: Attribute.RichText &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.SetMinMaxLength<{
-        minLength: 3;
-        maxLength: 500;
-      }>;
-    hasAroma: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::candle.candle',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::candle.candle',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::candle.candle',
-      'oneToMany',
-      'api::candle.candle'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1108,7 +1038,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::aroma.aroma': ApiAromaAroma;
       'api::banner.banner': ApiBannerBanner;
-      'api::candle.candle': ApiCandleCandle;
       'api::category.category': ApiCategoryCategory;
       'api::product.product': ApiProductProduct;
     }

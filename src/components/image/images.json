@@ -15,7 +15,7 @@
         "images"
       ]
     },
-    "description": {
+    "image_description": {
       "type": "string",
       "required": true,
       "maxLength": 40
