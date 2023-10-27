@@ -903,23 +903,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     };
   };
   attributes: {
-    photo: Attribute.Media &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    description: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.SetMinMaxLength<{
-        maxLength: 40;
-      }>;
     title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -945,6 +928,13 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
+        };
+      }>;
+    image: Attribute.Component<'image.images'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
     createdAt: Attribute.DateTime;

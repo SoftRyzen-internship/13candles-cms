@@ -16,29 +16,6 @@
     }
   },
   "attributes": {
-    "photo": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true,
-      "maxLength": 40
-    },
     "title": {
       "pluginOptions": {
         "i18n": {
@@ -66,6 +43,17 @@
         "pattern": "title"
       },
       "customField": "plugin::slug.slug"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "image.images",
+      "required": true
     }
   }
 }
