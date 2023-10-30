@@ -12,7 +12,7 @@ export interface ImageImages extends Schema.Component {
     image_description: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        maxLength: 40;
+        maxLength: 60;
       }>;
   };
 }
