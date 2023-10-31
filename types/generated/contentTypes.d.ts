@@ -848,19 +848,14 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'oneToMany',
       'api::product.product'
     >;
-    slug: Attribute.String &
-      Attribute.CustomField<
-        'plugin::slug.slug',
-        {
-          pattern: 'title';
-        }
-      > &
+    image: Attribute.Component<'image.images'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
-    image: Attribute.Component<'image.images'> &
+    slug: Attribute.UID<'api::category.category', 'title'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
