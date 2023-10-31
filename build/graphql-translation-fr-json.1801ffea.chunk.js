@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_13_candles_cms=self.webpackChunk_13_candles_cms||[]).push([[6804],{80037:e=>{e.exports=JSON.parse(`{"plugin.description.long":"Cr\xE9e un endpoint GraphQL supportant les m\xE9thodes par d\xE9faut de l'API.","plugin.description.short":"Cr\xE9e un endpoint GraphQL supportant les m\xE9thodes par d\xE9faut de l'API.","plugin.name":"GraphQL"}`)}}]);
