@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_13_candles_cms=self.webpackChunk_13_candles_cms||[]).push([[4816],{81524:(l,s,e)=>{e.r(s),e.d(s,{default:()=>a});var t=e(67294),_=e(20297),n=e(86706),E=e(36364),r=e(43467);const a=()=>{const P=(0,n.v9)(E._);return t.createElement(_.O4,{permissions:P.settings["transfer-tokens"].create},t.createElement(r.Z,null))}}}]);
