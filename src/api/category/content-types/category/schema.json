@@ -52,6 +52,16 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "sequence_number": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "unique": false,
+      "required": true
     }
   }
 }
