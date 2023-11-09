@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "name": {
+    "Title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -103,6 +103,18 @@
       "required": true,
       "maxLength": 30,
       "minLength": 2
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "customField",
+      "options": {
+        "pattern": "title"
+      },
+      "customField": "plugin::slug.slug"
     }
   }
 }

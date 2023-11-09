@@ -43,16 +43,6 @@
       "component": "image.images",
       "required": true
     },
-    "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "uid",
-      "targetField": "title",
-      "required": true
-    },
     "sequence_number": {
       "pluginOptions": {
         "i18n": {
@@ -63,17 +53,17 @@
       "unique": false,
       "required": true
     },
-    "slug_test": {
+    "slug": {
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "type": "string",
-      "unique": false,
-      "required": true,
-      "maxLength": 25,
-      "minLength": 3
+      "type": "customField",
+      "options": {
+        "pattern": "title"
+      },
+      "customField": "plugin::slug.slug"
     }
   }
 }
