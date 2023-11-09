@@ -983,7 +983,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
+    title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
