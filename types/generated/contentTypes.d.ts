@@ -869,6 +869,17 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: false;
         };
       }>;
+    slug_test: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 3;
+        maxLength: 25;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1083,6 +1094,7 @@ export interface ApiTestTest extends Schema.CollectionType {
     singularName: 'test';
     pluralName: 'tests';
     displayName: 'test';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1098,6 +1110,18 @@ export interface ApiTestTest extends Schema.CollectionType {
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    slug_test: Attribute.String &
+      Attribute.CustomField<
+        'plugin::slug.slug',
+        {
+          pattern: 'title';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;

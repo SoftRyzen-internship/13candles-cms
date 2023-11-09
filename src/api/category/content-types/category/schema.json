@@ -62,6 +62,18 @@
       "type": "integer",
       "unique": false,
       "required": true
+    },
+    "slug_test": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "unique": false,
+      "required": true,
+      "maxLength": 25,
+      "minLength": 3
     }
   }
 }
